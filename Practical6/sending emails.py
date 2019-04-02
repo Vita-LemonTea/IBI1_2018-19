@@ -1,16 +1,18 @@
 #created by Pan Hongbing
 
 import re
-text= open('address_information.csv')
+text = open('address_information.csv')
 l = []
 address = []
+re_email = re.compile(r'^[0-9A-Za-z_]+@[0-9A-Za-z_]+(\.[0-9A-Za-z_]+)+$')
 for line in text:    #get the comma-separated information
     line = line.rstrip()
     line = re.split(r',',line)
     l.append(line)
 
 for i in l:           #find which address is legal and discard the wrong ones
-    if re.search(r'.com',i[1]):
+    if re_email.match(i[1]):
+        print(i[1], ": Correct Address!")
         address.append(i)
     else:
         del i
@@ -27,7 +29,7 @@ from email.header import Header
 
 
 for person in address:        #loop for sending emails
-    mail = open('body.txt')    #open body and replace user names
+    mail = open('body.txt')    #open the file and replace user names
     content = mail.read()
     content = re.sub(r'User',person[0],content)
     
@@ -53,7 +55,7 @@ for person in address:        #loop for sending emails
         smtpObj.connect(mail_host, 25)   
         smtpObj.login(mail_user,mail_pass)
         smtpObj.sendmail(sender, receivers, message.as_string())
-        print ("success")
+        print ("Mail sent successfuly")
     except smtplib.SMTPException:
         print ("fail")
     
