@@ -1,0 +1,8 @@
+Findings:
+Compare human sequence with mouse sequence, the score is 1091 and the percentage identity is 89.6%.
+Compare human sequence with random sequence, the score is -250 and the percentage identity is 5.4%.
+Compare random sequence with mouse sequence, the score is -250 and the percentage identity is 5.9%.
+
+Interpretation:
+Human-mouse sequences' BLOSUM score is 1341 larger than human-random and mouse-random sequences. The percentage identity of human-mouse sequences is 84.2% larger than human-random sequences and 83.7% larger than mouse-random sequences. We can conclude that mouse and human sequences are much more simliar compared to a random sequence.
+I suppose that because mouse and human both are animals and have some similar features so their sequences have high percentage identity.

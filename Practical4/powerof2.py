@@ -1,4 +1,4 @@
-x = 3832
+x = 3832       #Give a number no larger than 2^13
 i = [0,1,2,3,4,5,6,7,8,9,10,11,12,13]
 good = []
 bad = []

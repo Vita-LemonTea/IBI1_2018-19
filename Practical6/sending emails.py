@@ -55,7 +55,7 @@ for person in address:        #loop for sending emails
         smtpObj.connect(mail_host, 25)   
         smtpObj.login(mail_user,mail_pass)
         smtpObj.sendmail(sender, receivers, message.as_string())
-        print ("Mail sent successfuly")
+        print ("Mail sent successfully")
     except smtplib.SMTPException:
         print ("fail")
     

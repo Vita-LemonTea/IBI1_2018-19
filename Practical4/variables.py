@@ -12,10 +12,11 @@ else:
     print("a < e")
     
     
-X = 1 < 2
+X = 1 > 2
 Y = 1 > 2
-Z = False
+
 if X == Y:
+    Z = False
     print(Z)
 else:
     Z = True
