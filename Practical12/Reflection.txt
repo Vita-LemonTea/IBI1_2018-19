@@ -1,0 +1,3 @@
+This practical was a little difficult for me. I spent more time on this practical than others, but I felt happy when I finally finished it. I faced some problems when writing codes.
+In SIR_vaccination, I output ten plots instead of one plot at the beginning. I solved this problem by changing  the order of some codes.
+When doing the SIR model, I found that the plot did not have legend though I included 'label' in code. After searching the internet, I knew that I should add 'plt.legend()' before 'plt.show()'.
