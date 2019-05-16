@@ -25,16 +25,16 @@ for i in range(0,100):
         id = parameter.getAttribute('id')
         if re.search("k_predator_breeds",id):
             #change the value with a random number
-            #value = numpy.random.sample()
+            value = np.random.sample()
         elif re.search("k_predator_dies",id):
             #change the value with a random number
-            #value = numpy.random.sample()
+            value = np.random.sample()
         elif re.search("k_prey_breeds",id):
             #change the value with a random number
-            #value = numpy.random.sample()
+            value = np.random.sample()
         elif re.search("k_prey_dies",id):
             #change the value with a random number
-            #value = numpy.random.sample()
+            value = np.random.sample()
     
     #rewrite the XML file
 

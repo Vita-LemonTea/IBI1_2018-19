@@ -16,24 +16,27 @@ parameters = collection.getElementsByTagName("parameter")
 
 
 for parameter in parameters:
-    #value = parameter.getElementsByTagName('value')
+
     value = parameter.getAttribute('value')
     id = parameter.getAttribute('id')
     if re.search("k_predator_breeds",id):
         #change the value with a number
+        parameter.set(value, '0.5')
     elif re.search("k_predator_dies",id):
         #change the value with a number
+        parameter.set(value, '0.15')
     elif re.search("k_prey_breeds",id):
         #change the value with a number
+        parameter.set(value, '0.5')
     elif re.search("k_prey_dies",id):
         #change the value with a number
+        parameter.set(value, '0.15')
 
 #rewrite the XML file
 
 # import necessary libraries
 import os
 import numpy as np
-import re
 import matplotlib.pyplot as plt
 
 #set the working directory
