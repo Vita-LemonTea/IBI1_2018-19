@@ -2,7 +2,7 @@ import re
 from xml.dom.minidom import parse
 import xml.dom.minidom
 
-
+#open the xml file and create the DOM tree
 DOMTree = xml.dom.minidom.parse("go_obo.xml")
 collection = DOMTree.documentElement
 terms = collection.getElementsByTagName("term")
@@ -10,6 +10,8 @@ terms = collection.getElementsByTagName("term")
 genelists = [["id","name","defination","childnodes"],]
 genelist = []
 
+
+#count the childnodes
 def Child(id, resultSet):
     for t in terms:
         parents = t.getElementsByTagName("is_a")
@@ -21,22 +23,14 @@ def Child(id, resultSet):
 
 
     
-
-    
-
-
-    
         
 
 for term in terms:
     defstr = term.getElementsByTagName('defstr')[0].childNodes[0].nodeValue
     id = term.getElementsByTagName('id')[0].childNodes[0].nodeValue
     name = term.getElementsByTagName('name')[0].childNodes[0].nodeValue
-    
 
-
-    
-    
+#select the "autophagosome" terms        
     if re.search("autophagosome",defstr):
         resultSet = set()
         Child(id, resultSet)
@@ -46,7 +40,7 @@ for term in terms:
 
 
 
-#Creat an excel
+#Creat an excel for autophagosome
 import openpyxl
  
  

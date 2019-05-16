@@ -1,16 +1,20 @@
 #created by Pan Hongbing
 
 import re
+#open “address_information.csv”
 text = open('address_information.csv')
 l = []
 address = []
 re_email = re.compile(r'^[0-9A-Za-z_]+@[0-9A-Za-z_]+(\.[0-9A-Za-z_]+)+$')
-for line in text:    #get the comma-separated information
+
+#get the comma-separated information
+for line in text:    
     line = line.rstrip()
     line = re.split(r',',line)
     l.append(line)
 
-for i in l:           #find which address is legal and discard the wrong ones
+#find which address is legal and discard the wrong ones
+for i in l:           
     if re_email.match(i[1]):
         print(i[1], ": Correct Address!")
         address.append(i)
@@ -20,19 +24,18 @@ for i in l:           #find which address is legal and discard the wrong ones
 
 
 
-
-
-
 import smtplib
 from email.mime.text import MIMEText
 from email.header import Header
 
-
-for person in address:        #loop for sending emails
-    mail = open('body.txt')    #open the file and replace user names
+#loop for sending emails
+for person in address:        
+#open the file and replace user names    
+    mail = open('body.txt')   
     content = mail.read()
     content = re.sub(r'User',person[0],content)
-    
+#close the file    
+    mail.close()
         
         
            
