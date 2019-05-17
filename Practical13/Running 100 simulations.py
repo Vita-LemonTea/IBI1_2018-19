@@ -10,7 +10,6 @@ from xml.dom.minidom import parse
 import xml.dom.minidom
 import os
 import numpy as np
-import re
 import matplotlib.pyplot as plt
 
 #open the xml file and create the DOM tree

@@ -8,6 +8,10 @@ Created on Wed May 15 19:16:51 2019
 import re
 from xml.dom.minidom import parse
 import xml.dom.minidom
+import os
+import numpy as np
+import matplotlib.pyplot as plt
+
 
 #open the xml file and create the DOM tree
 DOMTree = xml.dom.minidom.parse("predator-prey.xml")
@@ -35,10 +39,6 @@ for parameter in parameters:
 #rewrite the XML file
 DOMTree.write('predator-prey.xml')
 
-# import necessary libraries
-import os
-import numpy as np
-import matplotlib.pyplot as plt
 
 #set the working directory
 os.chdir(r'C:/Users/panho/Documents/git/IBI1_2018-19/Practical13')

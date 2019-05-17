@@ -7,7 +7,7 @@ l = []
 address = []
 re_email = re.compile(r'^[0-9A-Za-z_]+@[0-9A-Za-z_]+(\.[0-9A-Za-z_]+)+$')
 
-#get the comma-separated information
+#get the comma-separated information from the file
 for line in text:    
     line = line.rstrip()
     line = re.split(r',',line)
@@ -16,9 +16,11 @@ for line in text:
 #find which address is legal and discard the wrong ones
 for i in l:           
     if re_email.match(i[1]):
+        #print the right address
         print(i[1], ": Correct Address!")
         address.append(i)
     else:
+        #discard the wrong address
         del i
 
 

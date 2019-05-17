@@ -11,7 +11,7 @@ genelists = [["id","name","defination","childnodes"],]
 genelist = []
 
 
-#count the childnodes
+#function to count the childnodes
 def Child(id, resultSet):
     for t in terms:
         parents = t.getElementsByTagName("is_a")
@@ -33,6 +33,7 @@ for term in terms:
 #select the "autophagosome" terms        
     if re.search("autophagosome",defstr):
         resultSet = set()
+        #count the childnodes
         Child(id, resultSet)
         genelist = [id, name, defstr, len(resultSet)]
         genelists.append(genelist)

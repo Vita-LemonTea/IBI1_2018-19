@@ -1,4 +1,5 @@
-x = 2019    #Give a number no larger than 2^13
+#Give a number no larger than 2^13
+x = 2019    
 n = [0,1,2,3,4,5,6,7,8,9,10,11,12,13]    #powers of 2
 power = []
 
