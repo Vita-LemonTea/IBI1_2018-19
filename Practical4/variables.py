@@ -15,12 +15,9 @@ else:
 X = 1 > 2
 Y = 1 > 2
 
-if X == Y:
-    Z = False
-    print(Z)
-else:
-    Z = True
-    print(Z)
+Z=(X and not Y)or(Y and not X)
    
 W = X != Y
+
+print(Z)
 print(W)

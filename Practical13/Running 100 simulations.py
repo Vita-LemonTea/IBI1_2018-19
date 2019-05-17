@@ -37,7 +37,7 @@ for i in range(0,100):
             value = np.random.sample()
     
     #rewrite the XML file
-
+    DOMTree.write('predator-prey.xml')
 
     
     #set the working directory

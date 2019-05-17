@@ -33,6 +33,7 @@ for parameter in parameters:
         parameter.set(value, '0.15')
 
 #rewrite the XML file
+DOMTree.write('predator-prey.xml')
 
 # import necessary libraries
 import os
